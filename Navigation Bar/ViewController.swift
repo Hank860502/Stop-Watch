@@ -34,6 +34,14 @@ class ViewController: UIViewController {
          timer.invalidate()
     }
     
+    @IBAction func reset(sender: AnyObject) {
+        
+        timer.invalidate()
+        
+        time = 0
+        
+        timeDisplay.text = "0"
+    }
     
  
 
