@@ -21,9 +21,12 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-eF-NrG">
                                 <rect key="frame" x="-4" y="10" width="383" height="44"/>
                                 <items>
-                                    <navigationItem title="Navigation Bar" id="8PK-fx-XcT">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="w3D-ah-eoS"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qrN-ra-AbT"/>
+                                    <navigationItem title="Stop Watch" id="8PK-fx-XcT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="w3D-ah-eoS">
+                                            <connections>
+                                                <action selector="reset:" destination="BYZ-38-t0r" id="3cS-hf-EQQ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -37,63 +40,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wA-mm-5d0">
-                                <rect key="frame" x="81" y="480" width="64" height="48"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4p-wm-hzV">
+                                <rect key="frame" x="4" y="623" width="375" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="VJS-K6-KFm"/>
-                                    <constraint firstAttribute="height" constant="48" id="eqh-F8-v1H"/>
+                                    <constraint firstAttribute="height" constant="44" id="Raf-7a-V48"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpN-xx-27f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-Dn-6Q9">
-                                <rect key="frame" x="239" y="480" width="62" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="Aj4-ms-Wtw"/>
-                                    <constraint firstAttribute="height" constant="48" id="KCQ-Ld-MCR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsp-js-9wY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-DA-v74">
-                                <rect key="frame" x="121" y="536" width="133" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Gwz-QS-9ah"/>
-                                    <constraint firstAttribute="width" constant="133" id="s2n-SA-8Am"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJO-eq-vVw"/>
-                                </connections>
-                            </button>
+                                <items>
+                                    <barButtonItem systemItem="pause" id="rNA-ua-RI6">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="clT-f3-R9o"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VtX-rk-BDo"/>
+                                    <barButtonItem systemItem="play" id="SBu-Tu-KDt">
+                                        <connections>
+                                            <action selector="start:" destination="BYZ-38-t0r" id="TdF-Fa-3Zq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NCk-Dn-6Q9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6gN-U5-0Cu"/>
-                            <constraint firstItem="Doi-DA-v74" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6qa-Gz-Hpc"/>
                             <constraint firstItem="OD9-eF-NrG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="9ha-QJ-RBL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W4p-wm-hzV" secondAttribute="bottom" id="A7i-Rb-Fz8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OD9-eF-NrG" secondAttribute="trailing" constant="-20" id="Cf5-Ij-gjw"/>
-                            <constraint firstItem="NCk-Dn-6Q9" firstAttribute="top" secondItem="mu2-aF-6yM" secondAttribute="bottom" constant="109" id="IkG-dj-o4w"/>
                             <constraint firstItem="OD9-eF-NrG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SZ2-b2-cjZ"/>
-                            <constraint firstItem="6wA-mm-5d0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bs8-PC-AdU"/>
                             <constraint firstItem="mu2-aF-6yM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cLN-1A-XtN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NCk-Dn-6Q9" secondAttribute="trailing" constant="54" id="h3D-Ex-rif"/>
-                            <constraint firstItem="Doi-DA-v74" firstAttribute="top" secondItem="NCk-Dn-6Q9" secondAttribute="bottom" constant="8" id="hfr-CV-9TX"/>
+                            <constraint firstItem="W4p-wm-hzV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dxo-3D-5pb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W4p-wm-hzV" secondAttribute="trailing" constant="-24" id="fCY-Jh-QBH"/>
                             <constraint firstItem="mu2-aF-6yM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlh-lC-rHT"/>
-                            <constraint firstItem="6wA-mm-5d0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="q45-Yu-n5Y"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

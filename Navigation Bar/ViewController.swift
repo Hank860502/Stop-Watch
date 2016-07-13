@@ -24,13 +24,17 @@ class ViewController: UIViewController {
         
         timeDisplay.text = String(time)
     }
+    
+    
     @IBOutlet var timeDisplay: UITextView!
+    
     @IBAction func start(sender: AnyObject) {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("play"), userInfo : nil, repeats: true)
     }
+    
     @IBAction func stop(sender: AnyObject) {
-        
+
          timer.invalidate()
     }
     
