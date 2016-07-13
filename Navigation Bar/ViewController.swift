@@ -9,10 +9,37 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var time = 0
+    var timer = NSTimer()
+    
+    func play(){
+        
+        time++
+        
+        timeDisplay.text = String(time)
+    }
+    
+    func pause(){
+        
+        timeDisplay.text = String(time)
+    }
+    @IBOutlet var timeDisplay: UITextView!
+    @IBAction func start(sender: AnyObject) {
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("play"), userInfo : nil, repeats: true)
+    }
+    @IBAction func stop(sender: AnyObject) {
+        
+         timer.invalidate()
+    }
+    
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
